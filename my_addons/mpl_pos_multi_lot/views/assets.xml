@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- <template id="multi_pos_assets_backend" name="Multi Lot Backend" inherit_id="point_of_sale.assets"> -->
+        <template id="assets_backend" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="mpl_pos_multi_lot/static/src/js/order_widget.js"></script>
+                <script type="text/javascript" src="mpl_pos_multi_lot/static/src/js/product_lot.js"></script>
+                <script type="text/javascript" src="mpl_pos_multi_lot/static/src/js/product_lot_popup.js"></script>
+                <script type="text/javascript" src="mpl_pos_multi_lot/static/src/js/product_screen.js"></script>
+            </xpath>
+        </template>
+    </data>
+</odoo>

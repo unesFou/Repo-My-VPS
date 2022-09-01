@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_./odoo/my_addons/batc_to_ref_./odoo/my_addons/batc_to_ref,./odoo/my_addons/batc_to_ref../odoo/my_addons/batc_to_ref,model_./odoo/my_addons/batc_to_ref_./odoo/my_addons/batc_to_ref,base.group_user,1,1,1,1

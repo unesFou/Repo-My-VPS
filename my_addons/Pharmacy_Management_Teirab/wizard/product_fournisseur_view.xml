@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+
+        <!-- Created new Form View for wizard-->
+        <record id="product_fournisseur_product_wizard" model="ir.ui.view">
+            <field name="name">product.fournisseur.product.wizard</field>
+            <field name="model">product.fournisseur</field>
+            <field name="arch" type="xml">
+                <form string="Select Multiple product">
+                    <group>
+                        <field name="product_ids" nolabel="1">
+                            <tree>
+                                <!-- <field name="seller_ids"/>context="{'search_default_supplier_ids'ilike'partner_id.id'}" -->
+                                <field name="name" string='Cliquez pour afficher plus d article' />
+                            </tree>
+                        </field>
+                    </group>
+                    <footer>
+                        <button class="btn-primary" name="add_product" type="object" string="Apply"/>
+                     Or 
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

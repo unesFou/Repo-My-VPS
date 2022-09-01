@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <record model="ir.ui.view" id="purchase_order_sale_order">
+        <field name="name">purchase.order.margin.view.form</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <field name="order_line" position="before">
+                <group name="products_pharma">
+                    <button name="getProductsFornisor" string="Products by Supplier" type="object"  class="btn btn-primary o_form_button_edit"/>
+                </group>
+            </field>
+        </field>
+    </record>
+
+    <!-- inherit product_template form -->
+    <record id="inherit_product_template_only_form_view_product" model="ir.ui.view">
+        <field name="name">product.template.view.form.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <field name="invoice_policy" position="after" >
+                
+                <field name="batch"/>
+                <field name="eXP" widget="date"/>
+                <field name="w_S_P"/>
+                <field name="w_R_P"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Barcode Generat -->
+    <record id="inherit_product_template_to_generate_barcode_form_view_product" model="ir.ui.view">
+        <field name="name">product.template.to.generate.barcode.view.form.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <field name="barcode" position="after" >
+                <button string="Generate Barcode" class="btn btn-link" type="object" name="g_barcode" attrs="{'invisible': [('barcode', '!=', False)]}"/>
+            </field>
+        </field>
+    </record>
+    <!-- inherit product_template tree -->
+    <record id="inherit_product_template_only_tree_view_product" model="ir.ui.view">
+        <field name="name">product.template.view.tree.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view"/>
+        <field name="arch" type="xml">
+            <field name="name" position="before" >
+                
+                <field name="batch"/>
+                <field name="eXP"/>
+                <field name="w_S_P"/>
+                <field name="w_R_P"/>
+                
+            </field>
+        </field>
+    </record>
+
+    
+    <!-- Purchase order line inherit [qty_available] -->
+    <record id="purchase_order_form_inherit_purchase" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']/tree//field[@name='product_qty']" position="before">
+                <field  name="qty_available"/>
+            </xpath>
+        </field>
+    </record>
+    <!-- <record id="action_expired_product" model="ir.actions.act_window">
+        <field name="name">Action Name</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            
+        </field>
+    </record> -->
+    </data>
+</odoo>

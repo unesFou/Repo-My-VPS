@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="invoice_template_ss" model="ir.actions.report">
+            <field name="name">Facture_arabe</field>
+            <field name="model">account.move</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">report_template_saeed_shouk.report_template_invoice_ss</field>
+            <field name="report_file">report_template_saeed_shouk.report_template_invoice_ss</field>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+
+</odoo>

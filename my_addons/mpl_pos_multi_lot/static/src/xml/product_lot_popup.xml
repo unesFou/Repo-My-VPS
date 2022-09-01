@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="mpl_pos_multi_lot.OrderReceipt" t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension" owl="1">
+        <xpath expr="//WrappedProductNameLines" position="after">
+            <t t-esc="line.pack_product_lot"/>
+        </xpath>
+    </t>
+    <t t-name="ProductLotPopup" owl="1">
+        <div role="dialog" class="modal-dialog">
+            <div class="popup popup-confirm">
+                <header class="title drag-handle">
+                    <t t-esc="props.title"/>
+                </header>
+                <main class="body">
+                    <select id="product_lot_select" class="popup-input">
+                        <option value="">Select Lot ID</option>
+                        <t t-foreach="props.lot_data" t-as="lot">
+                            <t t-set="display_name" t-value="props.lot_data[lot].display_name"/>
+                            <t t-esc="props.selected_lot == display_name"/>
+                            <t t-if="props.selected_lot == display_name">
+                                <option t-att-value="display_name"
+                                        selected="props.selected_lot == display_name">
+                                    <t t-esc="display_name"/> -- (<t
+                                        t-esc="props.lot_data[lot].product_qty"/>)
+                                </option>
+                            </t>
+                            <t t-else="">
+                                <option t-att-value="display_name">
+                                    <t t-esc="display_name"/>(<t
+                                        t-esc="props.lot_data[lot].product_qty"/>)
+                                </option>
+                            </t>
+                        </t>
+                    </select>
+                </main>
+                <footer class="footer">
+                    <div class="button confirm" t-on-click="confirm">
+                        <t t-esc="props.confirmText"/>
+                    </div>
+                    <div class="button cancel" t-on-click="cancel">
+                        <t t-esc="props.cancelText"/>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </t>
+</templates>

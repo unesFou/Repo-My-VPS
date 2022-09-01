@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<odoo>
+        <!-- CATEGORIE ID -->
+    <data>
+        <record model="ir.module.category" id="pharmacy_management">
+            <field name="name">Pharmacy Management</field>
+        </record>
+        <!-- GROUPE ID -->
+        <record model="res.groups" id="module_category_pharmacy">
+            <field name="name">Pharmacy</field>
+            <field name="category_id" ref="Pharmacy_Management_Teirab.pharmacy_management"/>
+        </record>  
+    </data>
+</odoo>     

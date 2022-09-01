@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+          <record id="product_product_ext_batch_to_ref_form" model="ir.ui.view">
+            <field name="name">product_extended.product.form.batch.to.ref</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view" />
+            <field name="arch" type="xml">
+               <xpath expr="//header" position="after">
+                <div style="padding-left: 27%;">
+                    <button name="transfertTostockable" class="btn-primary" string="Transfert all to stockable" type="object" style="width: 15%;"/>
+                    <button name="transfertToLot" class="btn-primary" string="Get all product by Lot" type="object" style="width: 15%;"/>
+                    <button name="transfertToRef" class="btn-primary" string="Transfert all to ref" type="object" style="width: 15%;"/>
+                    <button name="transfert_to_pos" class="btn-primary" string="Transfert all to POS" type="object" style="width: 15%;"/>
+                  </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

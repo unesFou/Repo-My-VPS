@@ -1,0 +1,32 @@
+<odoo>
+    <data>
+        <!-- Add button to select all product -->
+        <record id="app_view_move_form" model="ir.ui.view">
+            <field name="name">app.account.move.form</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page/field[@name='invoice_line_ids']" position="before">
+                <button name ='getAllProduct' type="object"
+                        class='oe_highlight'
+                        string='Select all Product'
+                        style='background-color: black;width: 15%;
+                               border-radius: 50%;'/>                
+                </xpath>
+            </field>
+        </record>
+
+        <!-- <record id="inherit_view_id_inherit_product_product" model="ir.ui.view">
+            <field name="name">product.product.view.form.inherit</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_template_tree_view"/>
+            <field name="arch" type="xml">
+                <footer>
+                    <button string='Create Entry' name="select_product" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </field>
+        </record> -->
+    </data>
+</odoo>
+

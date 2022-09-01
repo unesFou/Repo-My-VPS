@@ -1,13 +1,12 @@
 {
-    'name': 'Customer Credit Limit With Warning and Blocking',
+    'name': 'Odoo 15 Credit Limit',
     'author': 'Odoo Mates',
     'category': 'Accounting',
-    'version': '4.2.0',
-    'description': """Customer Credit Limit, Credit Limit With Warning and Blocking, Customer Credit Limit With Warning and Blocking""",
-    'summary': """Customer Credit Limit, Credit Limit With Warning and Blocking, Customer Credit Limit With Warning and Blocking""",
+    'version': '2.1.0',
+    'description': """Customer Credit Limit""",
+    'summary': """Customer Credit Limit""",
     'sequence': 11,
     'website': 'https://www.odoomates.tech',
-    'live_test_url': 'https://www.youtube.com/watch?v=wNhWs29T5Zs',
     'depends': ['account', 'sale'],
     'license': 'LGPL-3',
     'data': [

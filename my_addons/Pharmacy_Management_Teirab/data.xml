@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+ <odoo> 
+    
+        <!-- <template id="assets_backend" name="pos assets">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/Pharmacy_Management_Teirab/static/src/js/pos.js"></script>
+            </xpath>
+            <xpath expr="//link[@id='pos-stylesheet']" position="after">
+                <link rel="stylesheet" href="/Pharmacy_Management_Teirab/static/src/css/pos.css"/>
+            </xpath>
+        </template>
+         <template id="assets_backend_web" name="Pharmacy_Management_Teirab_backend_assets">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/Pharmacy_Management_Teirab/static/src/js/test_pos_quantities.js"></script>
+            </xpath>
+        </template> -->
+
+ </odoo> 
+           <!-- inherit_id="web.assets_backend" -->
+        <!-- inherit_id="point_of_sale.assets" -->
